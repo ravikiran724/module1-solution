@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    angular.module('LunchCheck',[]).controller('Check',function($scope){
+    angular.module('LunchCheck',[]).controller('LunchCheckController',function($scope){
         $scope.name="";
         $scope.ans1="";
         $scope.colorr="";
@@ -8,7 +8,8 @@
         $scope.check=function(){
             var x=$scope.name;
             var res=x.split(',');
-            if(res.length>3 ){
+            var valuee = res.filter(String).length;
+            if(valuee>3 ){
                 $scope.ans1="Too much!";
                  $scope.colorr="green";
                     $scope.borr="green"
